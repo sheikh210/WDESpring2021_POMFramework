@@ -59,11 +59,22 @@
         </dependency>
 
         <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+
+        <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>6.9.1</version>
         </dependency>
-
 
     </dependencies>
     </dependencyManagement>
@@ -94,6 +105,20 @@
                     <testFailureIgnore>true</testFailureIgnore>
 
                     <suiteXmlFiles>
+                        <suiteXmlFile>target/test-classes/AirBnBTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/ATTTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/BankOfAmericaTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/BMWTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/CBSSportsTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/ChaseTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/EbayTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/ESPNTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/ExpediaTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/MacysTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/MercedesBenzTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/RedfinTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/TruliaTestNGRunner.xml</suiteXmlFile>
+                        <suiteXmlFile>target/test-classes/VerizonTestNGRunner.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

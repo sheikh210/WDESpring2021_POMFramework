@@ -23,9 +23,7 @@ import org.testng.annotations.Optional;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
 import utilities.DataReader;
-
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.*;
@@ -108,7 +106,9 @@ public class BaseAPI {
         extent.close();
     }
 
-    // Method to get local driver, based on the browserName parameter in testNG.xml runner file
+    /**
+     * Driver + ExtentReport Helper Methods
+     */
     public static WebDriver getLocalDriver(String browserName) {
         if (browserName.toLowerCase().equals("chrome")) {
             WebDriverManager.chromedriver().setup();

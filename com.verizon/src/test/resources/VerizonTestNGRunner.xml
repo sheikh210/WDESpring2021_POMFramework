@@ -7,10 +7,12 @@
 
         <parameter name="browserName" value="chrome"/>
         <parameter name="browserVersion" value="90"/>
-        <parameter name="url" value="https://www.verizon.com"/>
+        <parameter name="url" value="https://letskodeit.teachable.com/p/practice"/>
+<!--        <parameter name="url" value="https://www.pandora.com/account/sign-in"/>-->
 
         <classes>
             <class name="homepageTest.HomepageTest"/>
+<!--            <class name="pandoraLoginPageTest.PandoraLoginPageTest"/>-->
         </classes>
 
     </test>

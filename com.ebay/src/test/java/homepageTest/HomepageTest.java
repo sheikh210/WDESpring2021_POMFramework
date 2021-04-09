@@ -14,7 +14,7 @@ public class HomepageTest extends BaseAPI {
 
     Homepage homepage;
 
-    @Test (enabled = false)
+    @Test (groups = "smoke", priority = 1)
     public void testDoSearch() {
         homepage = new Homepage();
         String searchKeys = "headphones";
@@ -25,7 +25,7 @@ public class HomepageTest extends BaseAPI {
         Assert.assertTrue(compareStrings(actualText, searchKeys));
     }
 
-    @Test (enabled = false)
+    @Test (groups = {"smoke", "regression"}, priority = 2)
     public void testSelectByIndex() throws Exception {
         homepage = new Homepage();
         homepage.selectCategoryFromSearchBarUsingIndex(2);
@@ -36,25 +36,21 @@ public class HomepageTest extends BaseAPI {
         Assert.assertEquals(actualText, expectedText, "DOES NOT MATCH");
     }
 
-    @Test (enabled = false)
+    @Test (groups = "sanity", priority = 3)
     public void testSelectByValue() throws Exception{
         homepage = new Homepage();
         String value = "12576";
         homepage.selectCategoryFromSearchBarUsingValue(value);
-
-        // Business & Industrial
-        Thread.sleep(4000);
     }
 
-    @Test (enabled = false)
+    @Test (groups = "smoke", priority = 4)
     public void testSelectByVisText() throws Exception{
         homepage = new Homepage();
         String visibleText = "DVDs & Movies";
         homepage.selectCategoryFromSearchBarUsingVisibleText(visibleText);
-        Thread.sleep(4000);
     }
 
-    @Test (enabled = false)
+    @Test (groups = "sanity", priority = 5)
     public void testCountOfCategoryDropdownOptions() {
         homepage = new Homepage();
 
@@ -67,7 +63,7 @@ public class HomepageTest extends BaseAPI {
         Assert.assertEquals(actualCount, expectedCount, "COUNT OF CATEGORIES DOES NOT MATCH");
     }
 
-    @Test (enabled = false)
+    @Test (groups = "smoke", priority = 6)
     public void testNamesOfCategoriesDropdownOptions() throws Exception {
         homepage = new Homepage();
 
@@ -77,7 +73,7 @@ public class HomepageTest extends BaseAPI {
                 "innerHTML", sheetPath, "Categories"));
     }
 
-    @Test (enabled = false)
+    @Test (groups = "regression", priority = 7)
     public void testNamesOfCategoriesDropdownOptionsSoft() throws Exception {
         homepage = new Homepage();
 
@@ -99,7 +95,7 @@ public class HomepageTest extends BaseAPI {
         softAssert.assertAll();
     }
 
-    @Test
+    @Test (priority = 8)
     public void testHover() throws Exception {
         homepage = new Homepage();
         homepage.hoverOverButtonCovidReadMore();
@@ -112,7 +108,6 @@ public class HomepageTest extends BaseAPI {
 
         Assert.assertEquals(actualAttributeValue, expectedAttributeValue, "COLOR DOES NOT MATCH");
     }
-
 
 
 

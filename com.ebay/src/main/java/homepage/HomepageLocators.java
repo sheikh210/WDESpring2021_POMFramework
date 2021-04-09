@@ -11,4 +11,7 @@ public class HomepageLocators {
 
     public static final String WEB_ELEMENT_BUTTON_COVID_READ_MORE = "div.hl-cta__default.hl-cta__default-js.hl-loyalty__call-to-action";
     public static final String WEB_ELEMENT_DIV_ADVERTISEMENT_1 = "scandal100712"; // id
+
+
+    public static final String WEB_ELEMENT_BUTTON_SIGN_IN = "//a[@href='https://signin.ebay.com/ws/eBayISAPI.dll?SignIn&ru=https%3A%2F%2Fwww.ebay.com%2F']"; // xpath
 }

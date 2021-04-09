@@ -1,17 +1,10 @@
 package homepage;
 
 import common.BaseAPI;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import signInPage.SignInPage;
 
 import java.util.List;
 
@@ -40,10 +33,12 @@ public class Homepage extends BaseAPI {
     @FindBy (id = WEB_ELEMENT_DIV_ADVERTISEMENT_1)
     WebElement divAdvertisement1;
 
+    @FindBy (xpath = WEB_ELEMENT_BUTTON_SIGN_IN)
+    public WebElement buttonSignIn;
+
     public String GET_WEB_ELEMENTS_EXPECTED_CATEGORIES_SELECT_CATEGORY_DROPDOWN_SEARCH_BAR() {
         return WEB_ELEMENTS_EXPECTED_CATEGORIES_SELECT_CATEGORY_DROPDOWN_SEARCH_BAR;
     }
-
 
     // Initialize all the web elements on this page, using PageFactory
     public Homepage() {
@@ -64,29 +59,26 @@ public class Homepage extends BaseAPI {
     }
 
     public void selectCategoryFromSearchBarUsingIndex(int index) {
-        Select select = new Select(selectCategorySearchBar);
-
-        select.selectByIndex(index);
+        selectOptionByIndex(selectCategorySearchBar, index);
     }
 
     public void selectCategoryFromSearchBarUsingValue(String value) {
-        Select select = new Select(selectCategorySearchBar);
-
-        select.selectByValue(value);
+        selectOptionByValue(selectCategorySearchBar, value);
     }
 
     public void selectCategoryFromSearchBarUsingVisibleText(String visibleText) {
-        Select select = new Select(selectCategorySearchBar);
-
-        select.selectByVisibleText(visibleText);
+        selectOptionByVisibleText(selectCategorySearchBar, visibleText);
     }
 
     public void hoverOverButtonCovidReadMore() throws Exception {
-        Actions actions = new Actions(driver);
+        waitForVisibilityOfElement(divAdvertisement1);
+        hoverOverElement(buttonCovidReadMore);
+    }
 
-        driverWait.until(ExpectedConditions.visibilityOf(divAdvertisement1));
+    public SignInPage navigateToSignInPage() {
+        clickElement(buttonSignIn);
 
-        actions.moveToElement(buttonCovidReadMore).build().perform();
+        return new SignInPage();
     }
 
 
